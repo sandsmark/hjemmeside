@@ -9,5 +9,5 @@ class Entry(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "http://mts-productions.com/blog/entry/%i/" % self.id
+        return "/blog/entry/%i/" % self.id
 
