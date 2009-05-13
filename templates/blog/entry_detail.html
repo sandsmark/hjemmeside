@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block pagetitle %}{{ object.title }}{% endblock %}
+{% block content %}
+    	<div class="blogentry">
+    	<h3> {{ object.title }} </h3>
+	<span class="date">{{ object.pubdate }}</span>
+	 {{ object.entry|linebreaks }}
+	</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block pagetitle %}applications{% endblock %}
+{% block content %}
+{% if object_list %}
+    {% for app in object_list %}
+    	<div class="app-entry">
+            <h3><a href="{{ app.sourcecode.url }}">
+                    {{ app.name }} </a></h3>
+	 {{ app.description|linebreaks }}
+     <em>Screenshot:</em>
+            <img src="{{ app.screenshot.url }}" alt="screenshot of {{ app.name }}" />
+	</div>
+    {% endfor %}
+{% else %}
+    <p>No blog entries are available.</p>
+{% endif %}
+{% endblock %}

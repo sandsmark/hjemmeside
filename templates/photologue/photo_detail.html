@@ -1,0 +1,27 @@
+{% extends "photologue/root.html" %}
+
+{% load photologue_tags %}
+
+{% block pagetitle %}{{ object.title }}{% endblock %}
+
+{% block content %}
+
+<div class="gallery-photo">
+    <a href="{{ object.image.url }}"><img src="{{ object.get_display_url }}" alt="{{ object.title }}"/></a>
+    {% if object.caption %}<p>{{ object.caption }}</p>{% endif %}
+</div>
+{% if object.public_galleries %}
+<div id="other-photos">
+<h2>This photo is found in the following galleries:</h2>
+<ol>
+{% for gallery in object.public_galleries %}
+    <h3><a class="gallery-reference" href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
+    <li>{%previous_in_gallery object gallery%}
+    {%next_in_gallery object gallery%}</li>
+{% endfor %}
+</ol>
+</div>
+{% endif %}
+
+{% endblock %}
+
