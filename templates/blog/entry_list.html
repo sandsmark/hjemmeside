@@ -7,10 +7,13 @@
             <h3><a href="{{ entry.get_absolute_url}}">
                     {{ entry.title }} </a></h3>
 	<span class="date">{{ entry.pubdate }}</span>
-	 {{ entry.entry|linebreaks }}
+         {% autoescape off %}
+	  {{ entry.entry|linebreaks }}
+         {% endautoescape %}
 	</div>
     {% endfor %}
 {% else %}
     <p>No blog entries are available.</p>
 {% endif %}
 {% endblock %}
+

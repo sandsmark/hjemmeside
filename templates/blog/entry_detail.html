@@ -4,6 +4,8 @@
     	<div class="blogentry">
     	<h3> {{ object.title }} </h3>
 	<span class="date">{{ object.pubdate }}</span>
-	 {{ object.entry|linebreaks }}
+	{% autoescape off %}
+	 {{ object.entry|linebreaks|safe }}
+        {% endautoescape %}
 	</div>
 {% endblock %}
