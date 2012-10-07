@@ -1,11 +1,11 @@
 {% extends "photologue/root.html" %}
 
-{% block pagetitle %}Latest Photo Galleries{% endblock %}
+{% block pagetitle %}photos{% endblock %}
 
 {% block content %}
 
 {% if latest %}
-<ul>
+<ul style="list-style-type:none">
     {% for gallery in latest %}
     <li class="single-gallery">
         <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>

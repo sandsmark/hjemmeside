@@ -12,14 +12,16 @@
 </div>
 {% if object.public_galleries %}
 <div id="other-photos">
-<h2>This photo is found in the following galleries:</h2>
-<ol>
+	<h2>gallery:</h2>
+<ul class="photo-list">
 {% for gallery in object.public_galleries %}
-    <h3><a class="gallery-reference" href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
-    <li>{%previous_in_gallery object gallery%}
-    {%next_in_gallery object gallery%}</li>
+    <li>
+     <h3><a class="gallery-reference" href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
+     <p>{%next_in_gallery object gallery%}→</p>
+     <p>←{%previous_in_gallery object gallery%}</p>
+    </li>
 {% endfor %}
-</ol>
+</ul>
 </div>
 {% endif %}
 

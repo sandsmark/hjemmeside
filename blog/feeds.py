@@ -11,3 +11,4 @@ class LatestEntries(Feed):
     
     def item_pubdate(self, item):
         return item.pubdate
+

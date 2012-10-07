@@ -1,10 +1,8 @@
 {% extends "photologue/root.html" %}
 
-{% block pagetitle %}All Photos{% endblock %}
+{% block pagetitle %}all photos{% endblock %}
 
 {% block content %}
-
-<h1>All Photos</h1>
 
 {% if object_list %}
     {% for photo in object_list %}
